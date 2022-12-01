@@ -1,0 +1,53 @@
+
+.header{
+    border:2px dashed black;
+    height:60px;
+}
+.main,.header{
+    margin: auto;
+    width: 80vw;
+    border-radius: 10px;
+    display: flex;
+}
+.btns,.counters{
+    display: flex;
+    margin:auto;
+    flex-grow: 6;
+    padding: 5px;
+    justify-content: space-around;
+}
+.btns{
+    justify-content: space-around;
+    flex-grow: 6;
+}
+
+.main{
+    margin-top:10px;
+    border:2px solid black;
+    border-radius: 10px;
+    min-height:100px;
+}
+.main Button{margin-left: 60vw;}
+li{
+    margin-top: 7px;
+}
+.tasks{
+    border:2px dashed black;
+    width:75vw;
+    margin: auto;
+    border-radius: 10px;
+    padding: 5px;
+}
+.mid{
+  width: 70vw;
+  margin-left:50px
+}
+.header2{
+    justify-content: flex-end;
+    margin:30px;
+}
+.tab-content>.active{
+    max-width:80vw;
+    display: flex;
+    justify-content: space-around;
+}
