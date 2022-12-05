@@ -18,11 +18,13 @@ function Todo() {
     function removeTodo(selectedTask) {
         setTask(tasks.filter((allTasks) => selectedTask !== allTasks));
         setRemoveCounter(removeCounter + 1);
+        setAddCounter(addCounter - 1);
     }
     function removeAll() {
         const tedad = tasks.length;
         setTask([]);
         setRemoveCounter(removeCounter + tedad);
+        setAddCounter(0);
     }
     return (
         <div>
