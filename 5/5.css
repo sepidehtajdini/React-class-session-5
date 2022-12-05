@@ -1,56 +1,53 @@
-import { useState } from "react";
-import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "./5.css";
 
-function Todo() {
-    const [tasks, setTask] = useState([]);
-    const [removeCounter, setRemoveCounter] = useState(0);
-    const [addCounter, setAddCounter] = useState(0);
-
-    function addTodo() {
-        let newTask = prompt("Add new task");
-        if (tasks.includes(newTask)) { alert("This task has been mentioned before")}
-        else {
-            setTask([...tasks, newTask]);
-            setAddCounter(addCounter + 1);
-        }
-    }
-    function removeTodo(selectedTask) {
-        setTask(tasks.filter((allTasks) => selectedTask !== allTasks));
-        setRemoveCounter(removeCounter + 1);
-        setAddCounter(addCounter - 1);
-    }
-    function removeAll() {
-        const tedad = tasks.length;
-        setTask([]);
-        setRemoveCounter(removeCounter + tedad);
-        setAddCounter(0);
-    }
-    return (
-        <div>
-            <div className="todo__header">
-                <div className="todo__header__counters">
-                    <div>Tasks: {addCounter}</div>
-                    <div>Removed Tasks:{removeCounter}</div>
-                </div>
-                <div className="todo__header__btns">
-                    <Button variant="success" onClick={addTodo}>Add task</Button>
-                    <Button variant="danger" onClick={removeAll}>Remove all</Button>
-                </div>
-            </div>
-            <div className="todo__main">
-                <ul>{
-                    tasks.map((allTasks) => <li>
-                        <div className="todo__main__tasks">
-                            {allTasks} <Button variant="secondary" onClick={() =>
-                                removeTodo(allTasks)}>Remove</Button>
-                        </div>
-                    </li>)
-                }</ul>
-            </div>
-            <hr />
-        </div>
-    )
+.todo__header{
+    border:2px dashed black;
+    height:60px;
 }
-export default Todo
+.todo__main,.todo__header{
+    margin: auto;
+    width: 80vw;
+    border-radius: 10px;
+    display: flex;
+}
+.todo__header__btns,.todo__header__counters{
+    display: flex;
+    margin:auto;
+    flex-grow: 6;
+    padding: 5px;
+    justify-content: space-around;
+}
+.todo__header__btns{
+    justify-content: space-around;
+    flex-grow: 6;
+}
+
+.todo__main{
+    margin-top:10px;
+    border:2px solid black;
+    border-radius: 10px;
+    min-height:100px;
+}
+.todo__main Button{margin-left: 60vw;}
+li{
+    margin-top: 7px;
+}
+.todo__main__tasks{
+    border:2px dashed black;
+    width:75vw;
+    margin: auto;
+    border-radius: 10px;
+    padding: 5px;
+}
+.sketch__table,.sketch__content{
+  width: 70vw;
+  margin-left:50px
+}
+.sketch__header{
+    justify-content: flex-end;
+    margin:30px;
+}
+.tab-content>.active{
+    max-width:80vw;
+    display: flex;
+    justify-content: space-around;
+}
